@@ -13,6 +13,7 @@ function Login() {
      const handleChange = (prop) => (e) => {
           if (prop === "username") {
                setUsername(e.target.value);
+               
           }
 
           if (prop === "password") {
@@ -20,17 +21,11 @@ function Login() {
           }
      }
 
-     const login = async(username, password) => {
+     const login = async() => {
           try {
-              const response = await fetch('https://fakestoreapi.com/users');
-              if(!response.ok) throw new Error('Failed to fetch users.');
-              const json = await response.json();
-              const user = json.find(user => user.username === usernameSample && user.password === passwordSample);
-              if (user) {
-                  // Login successful, redirect to localhost:3000/home
+              if (username === usernameSample && password === passwordSample) {
                   window.location.href = "http://localhost:3000/home";
               } else {
-                  // Show an error message using sweetalert2
                   Swal.fire({
                       title: 'Error!',
                       text: 'Incorrect username or password.',
