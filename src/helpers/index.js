@@ -25,7 +25,6 @@ const addRecord = () => {
        showCancelButton: true,
        confirmButtonText: 'Save',
        preConfirm: () => {
-         // get the values from the input fields
          const firstname = document.getElementById('firstname').value;
          const lastname = document.getElementById('lastname').value;
          const username = document.getElementById('username').value;
@@ -39,7 +38,6 @@ const addRecord = () => {
          const longitude = document.getElementById('longitude').value;
          const phone = document.getElementById('phone').value;
  
-         // create a new object with the input values
          const newRecord = {
            name: {
              firstname: firstname,
@@ -60,11 +58,6 @@ const addRecord = () => {
            },
            phone: phone
          };
- 
-         // send the new record to the server or add it to the existing data
-         // ...
- 
-         // show a message to confirm that the record was added
          Swal.fire({
            title: 'Record Added',
            text: 'The new record has been added successfully.',

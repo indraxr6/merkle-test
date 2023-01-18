@@ -12,6 +12,9 @@ import {
 
 function Header() {
   const [showBasic, setShowBasic] = useState(true);
+  const logout = () => {
+    window.location.href = 'http://localhost:3000/';
+  };
   return (
     <header>
       <MDBNavbar expand='lg' light bgColor='white'>
@@ -29,6 +32,11 @@ function Header() {
               <MDBNavbarItem active>
                 <MDBNavbarLink aria-current='page' href='#'>
                   Home
+                </MDBNavbarLink>
+              </MDBNavbarItem>
+              <MDBNavbarItem>
+                <MDBNavbarLink onClick={() => logout()} aria-current='page' href='#'>
+                  Logout
                 </MDBNavbarLink>
               </MDBNavbarItem>
             </MDBNavbarNav>

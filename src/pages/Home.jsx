@@ -45,7 +45,6 @@ function Home() {
                text: 'The record has been deleted successfully.',
                type: 'success'
           });
-          getAllData()
      }
 
      return (
@@ -73,7 +72,7 @@ function Home() {
                          {currentItems.map((item, index) => (
                               <tr key={index}>
                                    <td>
-                                        <p className='text-muted mb-0'>{item.id}</p>
+                                        <p className='text-muted mb-2'>{item.id}</p>
                                    </td>
                                    <td>
                                         
@@ -102,8 +101,8 @@ function Home() {
                     </MDBTableBody>
                </MDBTable>
                <div className='d-flex justify-content-center'>
-                    <button onClick={() => paginate(1)}>Page 1</button>
-                    <button onClick={() => paginate(2)}>Page 2</button>
+                    <button onClick={() => paginate(1)} className='btn btn-primary' role='button'>1</button>
+                    <button onClick={() => paginate(2)} className='btn btn-primary' role='button'>2</button>
                </div>
           </>
 
